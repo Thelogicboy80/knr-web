@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="KNR MOVIEES is a premium movie information website with posters, trailers, cast, ratings, streaming-style rows, Telegram integration, and clear legal credits."
+    />
+    <title>KNR MOVIEES</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/logo.svg" />
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body>
+    <header class="main-nav">
+      <div class="nav-inner">
+        <a class="brand-mark" href="#top" id="navBrand">
+          <img class="brand-logo" src="./assets/logo.svg" alt="KNR MOVIEES logo" />
+          <span id="navBrandText">KNR MOVIEES</span>
+        </a>
+        <nav class="nav-links">
+          <a href="#trending">Trending</a>
+          <a href="#latest">New Movies</a>
+          <a href="#netflixRows">Categories</a>
+          <a href="#infoCenter">All Movies</a>
+          <a href="#membership" id="memberNavText">Membership</a>
+          <a href="#search">Search</a>
+          <a href="#telegram">Telegram</a>
+          <a href="#legal">Legal</a>
+          <a href="#contact">Contact</a>
+          <a href="./admin.html">Admin Panel</a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="announcement-bar">
+      <strong>Now Streaming Style</strong>
+      <span id="announcement">Fresh picks, curated shelves, trailers, and Telegram-ready movie discovery.</span>
+    </div>
+
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <p class="eyebrow" id="heroEyebrow">Premium movie information experience</p>
+        <h1 id="heroTitle">A cinematic movie hub with posters, trailers, and full details.</h1>
+        <p id="heroCopy">
+          KNR MOVIEES brings together movie posters, trailers, cast, ratings, genre info, story details, and direct
+          Telegram access in one premium browsing experience.
+        </p>
+        <div class="hero-actions">
+          <a class="primary-button" id="telegramLink" href="https://t.me/KNR_MOVIEES" target="_blank" rel="noreferrer"
+            >Join Telegram</a
+          >
+          <a class="ghost-button" id="heroTrailerLink" href="https://www.youtube.com" target="_blank" rel="noreferrer"
+            >Watch Trailer</a
+          >
+          <a class="ghost-button" id="browseLink" href="#collections">Browse Library</a>
+        </div>
+        <div class="hero-badges">
+          <span>Movie posters</span>
+          <span>Trailer previews</span>
+          <span>Cast and credits</span>
+          <span>IMDb-style facts</span>
+        </div>
+      </div>
+      <div class="hero-side">
+        <div class="hero-poster" id="heroPoster"></div>
+        <div class="hero-meta" id="heroMeta"></div>
+        <div class="hero-credit">
+          <strong>Content Credit</strong>
+          <p>
+            Posters, trailers, titles, logos, and related trademarks belong to their respective owners and are shown
+            for discovery, review, commentary, or promotional reference.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pulse-band">
+      <article class="pulse-card">
+        <div class="pulse-top">
+          <div>
+            <p class="eyebrow">Community Pulse</p>
+            <h2>Premium activity board</h2>
+          </div>
+          <span class="pulse-pill">Demo counters</span>
+        </div>
+        <div class="pulse-stats">
+          <div class="pulse-stat">
+            <strong id="liveVisitorsCount">284</strong>
+            <span>Live visitors demo</span>
+          </div>
+          <div class="pulse-stat">
+            <strong id="liveViewsCount">128K</strong>
+            <span>Demo views today</span>
+          </div>
+        </div>
+        <div class="pulse-feature">
+          <p class="eyebrow">Trending spotlight</p>
+          <h3 id="pulseMovieTitle">Top title loading</h3>
+          <p id="pulseMovieCopy">
+            Activity counters in this build are simulated UI elements until real analytics are connected.
+          </p>
+          <div class="meta-row" id="pulseMovieMeta"></div>
+        </div>
+        <div class="panel-actions">
+          <a class="primary-button" id="pulseTelegramLink" href="https://t.me/KNR_MOVIEES" target="_blank" rel="noreferrer"
+            >Open Telegram Channel</a
+          >
+          <a class="ghost-button" href="#legal">View Legal Notes</a>
+        </div>
+      </article>
+    </section>
+
+    <section class="stat-grid" id="statGrid"></section>
+
+    <section class="section-lead">
+      <div>
+        <p class="eyebrow">Why It Works</p>
+        <h2 id="siteName">KNR MOVIEES</h2>
+      </div>
+      <p>
+        Built to feel premium from the first click with bold visuals, streaming-inspired rows, complete movie facts,
+        and direct community links.
+      </p>
+    </section>
+
+    <section class="page-shell">
+      <div class="feature-grid">
+        <article class="feature-card">
+          <p class="eyebrow">Streaming Feel</p>
+          <h3>Netflix-style homepage rhythm</h3>
+          <p>Hero spotlight, trending lanes, new movie shelves, and binge-ready categories create a premium layout.</p>
+        </article>
+        <article class="feature-card">
+          <p class="eyebrow">Movie Details</p>
+          <h3>Posters, ratings, cast, story, release data</h3>
+          <p>Each title can surface poster art, runtime, language, country, awards, box office, IMDb rating, and more.</p>
+        </article>
+        <article class="feature-card">
+          <p class="eyebrow">Trailer Ready</p>
+          <h3>Official trailer-first browsing</h3>
+          <p>Every movie can route to a trailer and open a richer detail view without leaving the premium experience.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section" id="featured">
+      <div class="section-lead">
+        <div>
+          <p class="eyebrow">Fast Access</p>
+          <h2>Featured Right Now</h2>
+        </div>
+        <p>Quick spotlight cards for the movies you want visitors to open first.</p>
+      </div>
+      <div class="featured-rail" id="featuredRail"></div>
+    </section>
+
+    <section class="content-section" id="trending">
+      <div class="section-lead">
+        <div>
+          <p class="eyebrow">Hot Picks</p>
+          <h2>Trending Now</h2>
+        </div>
+        <p>Momentum-driven picks with demo popularity counters for a high-energy first impression.</p>
+      </div>
+      <div class="card-grid" id="trendingMount"></div>
+    </section>
+
+    <section class="content-section" id="latest">
+      <div class="section-lead">
+        <div>
+          <p class="eyebrow">Latest Updates</p>
+          <h2>New Movies</h2>
+        </div>
+        <p>The newest entries in your library, ordered by when you add them in the admin panel.</p>
+      </div>
+      <div class="card-grid" id="latestMount"></div>
+    </section>
+
+    <section class="content-section" id="netflixRows">
+      <div class="section-lead">
+        <div>
+          <p class="eyebrow">Netflix-Style Categories</p>
+          <h2>Genre Shelves</h2>
+        </div>
+        <p>Auto-built rows that group your catalog into streaming-inspired categories visitors can scan quickly.</p>
+      </div>
+      <div id="genreShelfMount"></div>
+    </section>
+
+    <section class="content-section" id="collections">
+      <div class="section-lead">
+        <div>
+          <p class="eyebrow">Curated Shelves</p>
+          <h2>Collections</h2>
+        </div>
+        <p>Rows you can manage from the admin panel to match moods, promotions, new drops, or special themes.</p>
+      </div>
+      <div id="collectionMount"></div>
+    </section>
+
+    <section class="content-section" id="infoCenter">
+      <div class="section-lead">
+        <div>
+          <p class="eyebrow">Movie Info Center</p>
+          <h2>All Movies</h2>
+        </div>
+        <p>Browse the full movie index with posters, ratings, genres, release facts, trailer shortcuts, and extra info.</p>
+      </div>
+      <div class="card-grid" id="directoryMount"></div>
+    </section>
+
+    <section class="content-section" id="membership">
+      <div class="section-lead">
+        <div>
+          <p class="eyebrow">User Login & Membership</p>
+          <h2>Join KNR MOVIEES</h2>
+        </div>
+        <p>Create a member account, log in from the site, and switch between membership tiers anytime.</p>
+      </div>
+      <div class="feature-grid" id="membershipPlans"></div>
+      <div class="panel-grid section-spacing">
+        <section class="panel">
+          <p class="eyebrow">Member Access</p>
+          <h3>Sign Up or Log In</h3>
+          <p class="status-copy" id="memberStatus">Create an account to activate your membership inside KNR MOVIEES.</p>
+
+          <div class="panel-grid section-spacing" id="memberGuestView">
+            <article class="auth-card">
+              <p class="eyebrow">Create Account</p>
+              <h2>Join Now</h2>
+              <form class="stacked-form section-spacing" id="signupForm">
+                <div class="field">
+                  <label for="signupName">Display Name</label>
+                  <input id="signupName" type="text" placeholder="Your name" />
+                </div>
+                <div class="field">
+                  <label for="signupEmail">Email Address</label>
+                  <input id="signupEmail" type="email" placeholder="name@example.com" />
+                </div>
+                <div class="field">
+                  <label for="signupPassword">Password</label>
+                  <input id="signupPassword" type="password" placeholder="At least 6 characters" />
+                </div>
+                <div class="field">
+                  <label for="signupPlan">Choose Membership</label>
+                  <select id="signupPlan"></select>
+                </div>
+                <div class="panel-actions">
+                  <button class="primary-button" type="submit">Create Account</button>
+                </div>
+              </form>
+            </article>
+
+            <article class="auth-card">
+              <p class="eyebrow">Existing Member</p>
+              <h2>Login</h2>
+              <form class="stacked-form section-spacing" id="userLoginForm">
+                <div class="field">
+                  <label for="loginEmail">Email Address</label>
+                  <input id="loginEmail" type="email" placeholder="name@example.com" />
+                </div>
+                <div class="field">
+                  <label for="loginUserPassword">Password</label>
+                  <input id="loginUserPassword" type="password" placeholder="Your password" />
+                </div>
+                <div class="panel-actions">
+                  <button class="primary-button" type="submit">Login</button>
+                </div>
+              </form>
+            </article>
+          </div>
+
+          <div class="auth-card section-spacing" id="memberActiveView" hidden>
+            <p class="eyebrow">Member Dashboard</p>
+            <h2 id="memberGreeting">Welcome back</h2>
+            <p class="status-copy" id="memberCurrentPlanCopy"></p>
+            <div class="meta-row section-spacing" id="memberMeta"></div>
+            <div class="panel-actions section-spacing">
+              <a class="primary-button" id="memberTelegramLink" href="https://t.me/KNR_MOVIEES" target="_blank" rel="noreferrer"
+                >Open Telegram</a
+              >
+              <button class="ghost-button" data-action="logout-user" type="button">Logout</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <p class="eyebrow">Membership Summary</p>
+          <h3 id="memberPlanTitle">Gold Member</h3>
+          <p class="status-copy" id="memberPlanCopy">
+            Choose a membership tier to unlock the account experience on KNR MOVIEES.
+          </p>
+          <div class="meta-row section-spacing" id="memberAccountMeta"></div>
+          <div class="picker-grid section-spacing" id="memberBenefitsList"></div>
+        </section>
+      </div>
+    </section>
+
+    <section class="content-section search-panel" id="search">
+      <div class="section-lead">
+        <div>
+          <p class="eyebrow">Search OMDb</p>
+          <h2>Find Any Movie</h2>
+        </div>
+        <p>Look up movie titles instantly and open detailed IMDb-style information in the same interface.</p>
+      </div>
+      <form class="search-form" id="searchForm">
+        <input id="searchInput" type="text" placeholder="Search by movie title..." aria-label="Search movies" />
+        <button class="primary-button" type="submit">Search</button>
+      </form>
+      <p class="search-status" id="searchStatus">Type a movie title to start searching.</p>
+      <div class="search-grid" id="searchResults"></div>
+    </section>
+
+    <section class="content-section" id="legal">
+      <div class="section-lead">
+        <div>
+          <p class="eyebrow">Privacy, Terms & Credits</p>
+          <h2>Legal Information</h2>
+        </div>
+        <p>Important website policies are visible on the page so visitors can browse with more clarity and trust.</p>
+      </div>
+      <div class="feature-grid legal-grid">
+        <article class="feature-card legal-card">
+          <p class="eyebrow">Privacy Policy</p>
+          <h3>Only limited account data is kept</h3>
+          <p>
+            This website only stores the basic information required for account login, membership handling, and access
+            management. Personal data is not displayed publicly and is not intended for resale.
+          </p>
+        </article>
+        <article class="feature-card legal-card">
+          <p class="eyebrow">Terms & Conditions</p>
+          <h3>Use the site responsibly</h3>
+          <p>
+            By using this website, visitors agree to browse lawfully, respect intellectual property, avoid abusive or
+            automated misuse, and follow any membership or access rules published by the site owner.
+          </p>
+        </article>
+        <article class="feature-card legal-card">
+          <p class="eyebrow">Copyright & Credits</p>
+          <h3>Content belongs to the respective owners</h3>
+          <p>
+            Movie posters, trailers, titles, logos, stills, and trademarks belong to their respective copyright or
+            trademark owners. This website is an independent movie-information experience and does not claim ownership.
+          </p>
+        </article>
+        <article class="feature-card legal-card">
+          <p class="eyebrow">Fair Use Disclaimer</p>
+          <h3>Reference material is shown carefully</h3>
+          <p>
+            Any referenced copyrighted material is presented for identification, review, commentary, criticism,
+            information, or promotional reference where applicable. This website is not affiliated with IMDb, Netflix,
+            YouTube, or any film studio.
+          </p>
+        </article>
+      </div>
+      <p class="legal-footnote">
+        Engagement counters shown in this premium demo are simulated interface elements unless connected to real
+        analytics. For corrections, credits, or takedown requests, contact the address below.
+      </p>
+    </section>
+
+    <section class="content-section" id="contact">
+      <div class="section-lead">
+        <div>
+          <p class="eyebrow">Contact & Community</p>
+          <h2>Stay Connected</h2>
+        </div>
+        <p>Telegram remains the main community destination, with direct contact available for support and requests.</p>
+      </div>
+      <div class="contact-grid">
+        <article class="contact-card">
+          <p class="eyebrow">Telegram Channel</p>
+          <h3>Join the movie community</h3>
+          <p>Use the Telegram link below to follow new uploads, announcements, and curated movie drops.</p>
+          <div class="meta-row section-spacing">
+            <span id="contactTelegramHandle">@KNR_MOVIEES</span>
+            <span>Public channel access</span>
+          </div>
+          <div class="panel-actions section-spacing">
+            <a class="primary-button" id="contactTelegramLink" href="https://t.me/KNR_MOVIEES" target="_blank" rel="noreferrer"
+              >Open Telegram</a
+            >
+          </div>
+        </article>
+        <article class="contact-card">
+          <p class="eyebrow">Verified Contact</p>
+          <h3>Email with blue tick</h3>
+          <p>Use this email for corrections, partnerships, content credit requests, copyright concerns, and support.</p>
+          <a class="verified-contact" href="mailto:madeinaitech1@gmail.com">
+            <span class="verified-check" aria-hidden="true">✓</span>
+            <span>madeinaitech1@gmail.com</span>
+          </a>
+        </article>
+        <article class="contact-card">
+          <p class="eyebrow">Owner Notice</p>
+          <h3>Credit stays with original creators</h3>
+          <p>
+            If any owner wants attribution improved, content updated, or a reference removed, the contact email above
+            should be used for a quick response.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-strip" id="telegram">
+      <div class="cta-panel">
+        <p class="eyebrow">Telegram Destination</p>
+        <h2>Drive your audience straight to <span id="ctaTelegramHandle">@KNR_MOVIEES</span></h2>
+        <p>
+          This build keeps the experience centered on your public brand and Telegram channel, with privacy, terms, and
+          copyright notices visible on the website itself.
+        </p>
+        <div class="hero-actions">
+          <a class="primary-button" id="ctaTelegramLink" href="https://t.me/KNR_MOVIEES" target="_blank" rel="noreferrer"
+            >Join Telegram Now</a
+          >
+          <a class="ghost-button" href="./admin.html">Open Admin Panel</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-copy">
+        <span id="footerNote">Built for brand presence, discovery, and channel growth.</span>
+        <p class="footer-subcopy">
+          All referenced movie-related content belongs to the respective owners. This is an independent movie-info web
+          experience.
+        </p>
+      </div>
+      <div class="footer-links">
+        <a href="#legal">Privacy & Terms</a>
+        <a href="#contact">Contact</a>
+        <a href="#telegram">Telegram</a>
+        <a href="./admin.html">Admin Panel</a>
+      </div>
+    </footer>
+
+    <div class="modal" id="detailModal" aria-hidden="true">
+      <div class="modal-card">
+        <div class="modal-top">
+          <h2>Movie Detail</h2>
+          <button class="ghost-button small" data-action="close-modal" type="button">Close</button>
+        </div>
+        <div id="detailContent"></div>
+      </div>
+    </div>
+
+    <script src="./assets/data.js"></script>
+    <script src="./assets/app.js"></script>
+  </body>
+</html>

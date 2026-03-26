@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="KNR MOVIEES admin panel for managing website settings, collections, memberships, users, and OMDb catalog entries."
+    />
+    <title>KNR MOVIEES Admin</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/logo.svg" />
+    <link rel="stylesheet" href="./assets/styles.css" />
+  </head>
+  <body class="auth-page">
+    <div class="auth-stack">
+      <div class="auth-card-header">
+        <div>
+          <p class="eyebrow">Admin Workspace</p>
+          <h1 class="brand-mark" id="adminBrand">
+            <img class="brand-logo" src="./assets/logo.svg" alt="KNR MOVIEES logo" />
+            <span id="adminBrandText">KNR MOVIEES Admin</span>
+          </h1>
+          <p class="muted-copy" id="adminTagline">Telegram-first movie discovery with a premium streaming feel.</p>
+        </div>
+        <div class="panel-actions">
+          <a class="ghost-button" href="./index.html">Open Website</a>
+          <button class="ghost-button" data-action="reset-starter" type="button">Restore Starter Content</button>
+        </div>
+      </div>
+
+      <div class="auth-card" id="authGate">
+        <p class="status-copy" id="authMessage">Create your admin login first. This stays in your browser.</p>
+
+        <section id="setupCard">
+          <p class="eyebrow">First-Time Setup</p>
+          <h2>Create Admin Login</h2>
+          <p>Create the admin account for your KNR MOVIEES dashboard and manage the server-backed site data securely.</p>
+          <form class="stacked-form section-spacing" id="setupForm">
+            <div class="field-grid">
+              <div class="field">
+                <label for="setupUsername">Username</label>
+                <input id="setupUsername" type="text" placeholder="Enter admin username" />
+              </div>
+              <div class="field">
+                <label for="setupPassword">Password</label>
+                <input id="setupPassword" type="password" placeholder="At least 6 characters" />
+              </div>
+            </div>
+            <div class="field">
+              <label for="setupConfirmPassword">Confirm Password</label>
+              <input id="setupConfirmPassword" type="password" placeholder="Re-enter password" />
+            </div>
+            <div class="auth-actions">
+              <button class="primary-button" type="submit">Create Admin</button>
+            </div>
+          </form>
+        </section>
+
+        <section id="loginCard" hidden>
+          <p class="eyebrow">Sign In</p>
+          <h2>Admin Login</h2>
+          <form class="stacked-form section-spacing" id="loginForm">
+            <div class="field-grid">
+              <div class="field">
+                <label for="loginUsername">Username</label>
+                <input id="loginUsername" type="text" placeholder="Admin username" />
+              </div>
+              <div class="field">
+                <label for="loginPassword">Password</label>
+                <input id="loginPassword" type="password" placeholder="Admin password" />
+              </div>
+            </div>
+            <div class="auth-actions">
+              <button class="primary-button" type="submit">Login</button>
+            </div>
+          </form>
+        </section>
+      </div>
+
+      <main class="admin-layout" id="adminShell" hidden>
+        <div class="admin-topbar">
+          <div>
+            <p class="eyebrow">Dashboard</p>
+            <h2>Manage KNR MOVIEES</h2>
+          </div>
+          <div class="panel-actions">
+            <a class="ghost-button" href="./index.html" target="_blank" rel="noreferrer">Preview Website</a>
+            <button class="ghost-button" data-action="logout" type="button">Logout</button>
+          </div>
+        </div>
+
+        <section class="panel">
+          <p class="status-copy" id="adminStatus">You are signed in. Start editing your site.</p>
+        </section>
+
+        <section class="panel">
+          <p class="eyebrow">Overview</p>
+          <h3>Content Snapshot</h3>
+          <div class="stat-grid" id="dashboardStats"></div>
+        </section>
+
+        <div class="panel-grid">
+          <section class="panel">
+            <p class="eyebrow">Site Settings</p>
+            <h3>Brand, Telegram, and Hero Content</h3>
+            <form class="stacked-form section-spacing" id="settingsForm">
+              <div class="field-grid">
+                <div class="field">
+                  <label for="siteName">Site Name</label>
+                  <input id="siteName" type="text" />
+                </div>
+                <div class="field">
+                  <label for="tagline">Tagline</label>
+                  <input id="tagline" type="text" />
+                </div>
+                <div class="field">
+                  <label for="heroEyebrow">Hero Eyebrow</label>
+                  <input id="heroEyebrow" type="text" />
+                </div>
+                <div class="field">
+                  <label for="heroMovieId">Hero Spotlight Movie</label>
+                  <select id="heroMovieId"></select>
+                </div>
+                <div class="field full">
+                  <label for="heroTitle">Hero Title</label>
+                  <input id="heroTitle" type="text" />
+                </div>
+                <div class="field full">
+                  <label for="heroCopy">Hero Copy</label>
+                  <textarea id="heroCopy"></textarea>
+                </div>
+                <div class="field full">
+                  <label for="announcement">Announcement Bar</label>
+                  <input id="announcement" type="text" />
+                </div>
+                <div class="field">
+                  <label for="telegramHandle">Telegram Handle</label>
+                  <input id="telegramHandle" type="text" />
+                </div>
+                <div class="field">
+                  <label for="telegramUrl">Telegram URL</label>
+                  <input id="telegramUrl" type="url" />
+                </div>
+                <div class="field">
+                  <label for="telegramBotUsername">Telegram Bot Username</label>
+                  <input id="telegramBotUsername" type="text" placeholder="movie_helper_bot" />
+                </div>
+                <div class="field">
+                  <label for="primaryButtonLabel">Primary Button Label</label>
+                  <input id="primaryButtonLabel" type="text" />
+                </div>
+                <div class="field">
+                  <label for="secondaryButtonLabel">Secondary Button Label</label>
+                  <input id="secondaryButtonLabel" type="text" />
+                </div>
+                <div class="field">
+                  <label for="apiKey">OMDb API Key</label>
+                  <input id="apiKey" type="text" />
+                </div>
+                <div class="field">
+                  <label for="shortenerBaseUrl">Link Shortener URL</label>
+                  <input id="shortenerBaseUrl" type="url" />
+                </div>
+                <div class="field full">
+                  <label for="distributionNotice">Legal Delivery Notice</label>
+                  <input
+                    id="distributionNotice"
+                    type="text"
+                    placeholder="Share only movies and files you own or are licensed to distribute."
+                  />
+                </div>
+                <label class="picker-item">
+                  <input id="freePlanShortenerEnabled" type="checkbox" />
+                  <span>Use LinkShortify for Free Plan access</span>
+                </label>
+                <div class="field">
+                  <label for="footerNote">Footer Note</label>
+                  <input id="footerNote" type="text" />
+                </div>
+              </div>
+              <p class="status-copy">
+                Telegram bot delivery is intended only for files and movies you own or are licensed to distribute.
+              </p>
+              <div class="panel-actions">
+                <button class="primary-button" type="submit">Save Settings</button>
+              </div>
+            </form>
+          </section>
+
+          <section class="panel">
+            <p class="eyebrow">Backup Tools</p>
+            <h3>Keep Your Content Safe</h3>
+            <p>Download a backup before major edits or import a previous JSON state to restore the site quickly.</p>
+            <div class="panel-actions section-spacing">
+              <button class="primary-button" data-action="download-backup" type="button">Download Backup</button>
+              <label class="ghost-button" for="backupInput">Import Backup</label>
+              <input id="backupInput" type="file" accept="application/json" hidden />
+            </div>
+          </section>
+        </div>
+
+        <section class="panel">
+          <p class="eyebrow">OMDb Lookup</p>
+          <h3>Add Movies to Catalog</h3>
+          <form class="inline-form section-spacing" id="lookupForm">
+            <div class="field-grid">
+              <div class="field">
+                <label for="lookupMode">Lookup Mode</label>
+                <select id="lookupMode">
+                  <option value="title">Search by Title</option>
+                  <option value="id">Search by IMDb ID</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="lookupQuery">Movie Title or IMDb ID</label>
+                <input id="lookupQuery" type="text" placeholder="For example: Inception or tt1375666" />
+              </div>
+            </div>
+            <div class="panel-actions">
+              <button class="primary-button" type="submit">Search OMDb</button>
+            </div>
+          </form>
+          <p class="status-copy section-spacing" id="lookupMessage">Search OMDb to start building your movie library.</p>
+          <div class="lookup-grid" id="lookupResults"></div>
+        </section>
+
+        <div class="panel-grid">
+          <section class="panel">
+            <p class="eyebrow">Movie Editor</p>
+            <h3>Create or Update a Catalog Entry</h3>
+            <p class="status-copy" id="selectedMovieLabel">No movie selected yet.</p>
+            <form class="stacked-form section-spacing" id="movieForm">
+              <input id="movieId" type="hidden" />
+              <div class="field-grid">
+                <div class="field">
+                  <label for="movieImdbId">IMDb ID</label>
+                  <input id="movieImdbId" type="text" readonly />
+                </div>
+                <div class="field">
+                  <label for="movieYearHint">Year</label>
+                  <input id="movieYearHint" type="text" />
+                </div>
+                <div class="field full">
+                  <label for="movieTitleHint">Title</label>
+                  <input id="movieTitleHint" type="text" />
+                </div>
+                <div class="field">
+                  <label for="movieTag">Badge / Tag</label>
+                  <input id="movieTag" type="text" placeholder="Action Favorite" />
+                </div>
+                <div class="field">
+                  <label for="movieCtaLabel">CTA Label</label>
+                  <input id="movieCtaLabel" type="text" />
+                </div>
+                <div class="field full">
+                  <label for="movieCtaUrl">CTA URL</label>
+                  <input id="movieCtaUrl" type="url" />
+                </div>
+                <div class="field full">
+                  <label for="movieTrailerUrl">YouTube Trailer URL</label>
+                  <input id="movieTrailerUrl" type="url" placeholder="https://www.youtube.com/watch?v=..." />
+                </div>
+                <div class="field">
+                  <label for="movieDownloadLabel">Bot Download Button Label</label>
+                  <input id="movieDownloadLabel" type="text" placeholder="Download" />
+                </div>
+                <div class="field full">
+                  <label for="movieDownloadUrl">Licensed Download URL</label>
+                  <input id="movieDownloadUrl" type="url" placeholder="https://your-storage.example/movie-file" />
+                </div>
+                <div class="field full">
+                  <label for="movieNote">Custom Note</label>
+                  <textarea id="movieNote"></textarea>
+                </div>
+                <label class="picker-item">
+                  <input id="movieFeatured" type="checkbox" />
+                  <span>Show in featured row</span>
+                </label>
+              </div>
+              <p class="status-copy">
+                When a licensed download URL is filled in and the bot username is configured, the website will open this movie inside your Telegram bot.
+              </p>
+              <div class="panel-actions">
+                <button class="primary-button" type="submit">Save Movie</button>
+                <button class="ghost-button" data-action="clear-movie-form" type="button">Clear Form</button>
+              </div>
+            </form>
+          </section>
+
+          <section class="panel">
+            <p class="eyebrow">Collection Editor</p>
+            <h3>Build Homepage Rows</h3>
+            <form class="stacked-form section-spacing" id="collectionForm">
+              <input id="collectionId" type="hidden" />
+              <div class="field">
+                <label for="collectionTitle">Collection Title</label>
+                <input id="collectionTitle" type="text" placeholder="Weekend Marathon" />
+              </div>
+              <div class="field">
+                <label for="collectionDescription">Collection Description</label>
+                <textarea id="collectionDescription"></textarea>
+              </div>
+              <div class="field">
+                <span class="picker-legend">Select movies for this collection</span>
+                <div class="picker-grid" id="collectionMoviePicker"></div>
+              </div>
+              <div class="panel-actions">
+                <button class="primary-button" type="submit">Save Collection</button>
+                <button class="ghost-button" data-action="clear-collection-form" type="button">Clear Form</button>
+              </div>
+            </form>
+          </section>
+        </div>
+
+        <div class="panel-grid">
+          <section class="panel">
+            <p class="eyebrow">Catalog Library</p>
+            <h3>Current Movies</h3>
+            <div class="admin-list" id="catalogList"></div>
+          </section>
+
+          <section class="panel">
+            <p class="eyebrow">Homepage Collections</p>
+            <h3>Current Rows</h3>
+            <div class="admin-list" id="collectionList"></div>
+          </section>
+        </div>
+
+        <div class="panel-grid">
+          <section class="panel">
+            <p class="eyebrow">Membership Plans</p>
+            <h3>Live Membership Tiers</h3>
+            <div class="admin-list" id="planList"></div>
+          </section>
+
+          <section class="panel">
+            <p class="eyebrow">Registered Members</p>
+            <h3>User Accounts</h3>
+            <div class="admin-list" id="memberList"></div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <script src="./assets/data.js"></script>
+    <script src="./assets/admin.js"></script>
+  </body>
+</html>
